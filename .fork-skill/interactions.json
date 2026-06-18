@@ -1,0 +1,26 @@
+[
+  {
+    "name": "mobile-menu-open",
+    "action": "click",
+    "selector": "button[aria-label='Toggle menu']",
+    "wait": 300
+  },
+  {
+    "name": "mobile-filter-open",
+    "action": "click",
+    "selector": "button:has-text('Filter by')",
+    "wait": 300
+  },
+  {
+    "name": "load-more-hover",
+    "action": "hover",
+    "selector": "button:has-text('Load More')",
+    "wait": 300
+  },
+  {
+    "name": "scroll-footer",
+    "action": "scroll",
+    "y": 2600,
+    "wait": 300
+  }
+]

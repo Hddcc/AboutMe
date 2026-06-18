@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">WeChat</title>
+  <desc id="desc">WeChat contact code.</desc>
+  <rect width="240" height="240" rx="18" fill="#e8edf2"/>
+  <rect x="22" y="22" width="54" height="54" fill="#0a0b0d"/>
+  <rect x="34" y="34" width="30" height="30" fill="#e8edf2"/>
+  <rect x="164" y="22" width="54" height="54" fill="#0a0b0d"/>
+  <rect x="176" y="34" width="30" height="30" fill="#e8edf2"/>
+  <rect x="22" y="164" width="54" height="54" fill="#0a0b0d"/>
+  <rect x="34" y="176" width="30" height="30" fill="#e8edf2"/>
+  <path d="M96 24h18v18H96zm30 0h18v36h-18zm-30 48h48v18H96zm72 30h18v18h-18zm30 0h18v48h-18zm-102 0h42v18H96zm0 30h18v18H96zm42 0h18v18h-18zm-42 30h60v18H96zm78 0h42v18h-42zm-78 30h18v24H96zm36 0h24v18h-24zm54 0h30v24h-30z" fill="#0a0b0d"/>
+  <path d="M91 91h58v58H91z" fill="none" stroke="#9ef7d6" stroke-width="8"/>
+</svg>
