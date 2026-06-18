@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
-  <title id="title">Personal avatar placeholder</title>
-  <desc id="desc">Abstract graphite portrait placeholder with mint signal lines.</desc>
-  <rect width="320" height="320" rx="42" fill="#0a0b0d"/>
-  <path d="M40 228c32-66 66-98 116-98 64 0 98 44 124 98" fill="#151a1f" stroke="#2a3138" stroke-width="3"/>
-  <circle cx="160" cy="112" r="54" fill="#1d242b" stroke="#6f7b86" stroke-width="3"/>
-  <path d="M92 86h136M78 236h164M112 62l-20 20M228 62l20 20" stroke="#9ef7d6" stroke-width="3" stroke-linecap="round" opacity=".78"/>
-  <path d="M116 141c18 18 70 18 88 0" stroke="#d6b36a" stroke-width="5" stroke-linecap="round" fill="none"/>
-</svg>
