@@ -3,7 +3,7 @@ import type { Profile } from "./types";
 const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 export const fallbackProfile: Profile = {
-  name: "Your Name",
+  name: "ZYF's Space",
   avatar: assetUrl("assets/avatar-placeholder.svg"),
   avatarAlt: "Personal avatar portrait",
   introduction:

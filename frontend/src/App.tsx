@@ -95,20 +95,20 @@ const publicPlatformCards = platformCards.filter((card) => card.status === "acti
 
 export function App() {
   return (
-    <main className="relative flex h-dvh min-h-[620px] flex-col overflow-hidden bg-black text-white sm:min-h-[720px]">
-      <section className="relative flex shrink-0 items-end px-5 pb-5 pt-8 sm:px-8 sm:pb-7 sm:pt-14 lg:h-[35dvh] lg:px-20 lg:pb-5 lg:pt-10">
+    <main className="relative flex h-dvh min-h-[540px] flex-col overflow-hidden bg-black text-white sm:min-h-[600px] lg:min-h-0">
+      <section className="relative flex h-[clamp(270px,34dvh,320px)] shrink-0 items-end px-[clamp(1.25rem,4vw,5rem)] pb-[clamp(0.9rem,2dvh,1.75rem)] pt-[clamp(1rem,4dvh,3.5rem)] lg:h-[clamp(205px,31dvh,330px)]">
         <HeroGlow />
         <IdentityHero />
       </section>
 
-      <section className="relative flex min-h-0 flex-1 flex-col justify-start overflow-hidden pb-4 pt-6 sm:pb-6 sm:pt-8 lg:justify-end lg:pb-5 lg:pt-0">
-        <div className="featured-marquee px-3">
+      <section className="relative flex min-h-0 flex-1 flex-col justify-start overflow-hidden pb-[clamp(0.75rem,1.8dvh,1.5rem)] pt-[clamp(0.75rem,2.4dvh,2rem)] lg:justify-end lg:pt-0">
+        <div className="featured-marquee px-[clamp(0.75rem,2vw,1.875rem)]">
           <div className="featured-track">
             <PlatformCardGroup cards={publicPlatformCards} />
             <PlatformCardGroup cards={publicPlatformCards} isDuplicate />
           </div>
         </div>
-        <div className="mx-auto mt-4 flex w-full max-w-[1280px] justify-between px-10 lg:mt-5 lg:px-20">
+        <div className="mx-auto mt-[clamp(0.75rem,1.6dvh,1.25rem)] flex w-full max-w-[1280px] justify-between px-[clamp(2rem,5vw,5rem)]">
           <ArrowButton direction="left" />
           <ArrowButton direction="right" />
         </div>
@@ -129,15 +129,15 @@ function PlatformCardGroup({ cards, isDuplicate = false }: { cards: PlatformCard
 
 function IdentityHero() {
   return (
-    <div className="relative z-10 flex max-w-[1180px] items-center gap-6 sm:gap-8 lg:gap-12">
-      <div className="relative flex h-40 w-40 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/40 bg-white/[0.06] shadow-[0_20px_80px_rgba(0,0,0,0.42)] sm:h-56 sm:w-56 lg:h-72 lg:w-72">
+    <div className="relative z-10 flex max-w-[1180px] items-center gap-[clamp(1rem,3vw,3rem)]">
+      <div className="relative flex h-[clamp(6.25rem,16vw,14.25rem)] w-[clamp(6.25rem,16vw,14.25rem)] shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/40 bg-white/[0.06] shadow-[0_20px_80px_rgba(0,0,0,0.42)]">
         <img src={assetUrl("assets/avatar-yufeng.png")} alt="Yufeng Zhang avatar" className="h-full w-full object-cover" />
       </div>
       <div>
-        <h1 className="text-[2.35rem] font-medium leading-[0.98] tracking-normal text-white sm:text-[4.4rem] lg:text-[5.2rem]">
+        <h1 className="text-[clamp(1.78rem,5vw,4rem)] font-medium leading-[0.98] tracking-normal text-white">
           Yufeng Zhang
         </h1>
-        <p className="mt-3 max-w-[34rem] text-base font-normal leading-6 text-white/70 sm:mt-4 sm:text-xl sm:leading-8 lg:text-2xl lg:leading-9">
+        <p className="mt-[clamp(0.55rem,1.2vw,1rem)] max-w-[clamp(20rem,34vw,34rem)] text-[clamp(0.82rem,1.6vw,1.2rem)] font-normal leading-[1.55] text-white/70">
           曾在CVPR、ICCV、AAAI、IEEE等会议上点开官网看过，在腾讯、字节跳动、美团、阿里巴巴、京东等企业都有app账号，同时具有二十余年windows用户经验，在token没耗尽前是天才少年，耗尽另说。
         </p>
       </div>
@@ -157,35 +157,35 @@ function HeroGlow() {
 function PlatformLinkCard({ card, isDuplicate = false }: { card: PlatformCard; isDuplicate?: boolean }) {
   return (
     <a
-      className="group relative grid h-[300px] w-[350px] overflow-hidden rounded-[18px] border border-white/70 bg-[#101010] text-white shadow-[0_24px_90px_rgba(0,0,0,0.35)] outline-none transition duration-300 hover:border-white hover:shadow-[0_30px_110px_rgba(255,255,255,0.12)] focus-visible:border-white focus-visible:ring-2 focus-visible:ring-white/80 lg:h-[576px] lg:w-[520px]"
+      className="group relative grid h-[clamp(17rem,41dvh,19rem)] w-[min(21.5rem,calc(100vw-2rem))] overflow-hidden rounded-[18px] border border-white/70 bg-[#101010] text-white shadow-[0_24px_90px_rgba(0,0,0,0.35)] outline-none transition duration-300 hover:border-white hover:shadow-[0_30px_110px_rgba(255,255,255,0.12)] focus-visible:border-white focus-visible:ring-2 focus-visible:ring-white/80 sm:h-[clamp(18rem,40dvh,21rem)] lg:h-[clamp(22rem,47dvh,29rem)] lg:w-[clamp(22rem,28vw,26.5rem)]"
       href={card.href}
       aria-label={`${card.label}: ${card.headline}`}
       tabIndex={isDuplicate ? -1 : undefined}
       style={{ "--card-accent": card.accent } as React.CSSProperties}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_10%,color-mix(in_srgb,var(--card-accent)_28%,transparent),transparent_42%)] opacity-80" />
-      <div className="relative flex h-full min-h-0 flex-col p-6 sm:p-7 lg:p-10">
+      <div className="relative flex h-full min-h-0 flex-col p-[clamp(1.25rem,2.2vw,2rem)]">
         <div className="flex items-center justify-between gap-4">
           <span className="rounded-full border border-white/25 bg-white/[0.08] px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-white/78">
             {card.label}
           </span>
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-xl transition group-hover:bg-white group-hover:text-black lg:h-12 lg:w-12 lg:text-2xl">
+          <span className="flex h-[clamp(2.5rem,3vw,3rem)] w-[clamp(2.5rem,3vw,3rem)] items-center justify-center rounded-full border border-white/30 text-[clamp(1.2rem,1.6vw,1.5rem)] transition group-hover:bg-white group-hover:text-black">
             {"->"}
           </span>
         </div>
 
-        <div className="mt-5 h-[84px] shrink-0 lg:mt-7 lg:h-[210px]">
+        <div className="mt-[clamp(1rem,1.6vw,1.75rem)] h-[clamp(5rem,13dvh,5.5rem)] shrink-0 sm:h-[clamp(5.25rem,15dvh,7rem)] lg:h-[clamp(8.5rem,18dvh,10.75rem)]">
           <PlatformInterior card={card} />
         </div>
 
-        <div className="mt-4 flex min-h-0 flex-1 flex-col lg:mt-7">
-          <h2 className="max-w-[22rem] text-[1.28rem] font-medium leading-[1.04] tracking-normal sm:text-[1.42rem] lg:text-[2.55rem]">
+        <div className="mt-[clamp(0.9rem,1.7vw,1.75rem)] flex min-h-0 flex-1 flex-col">
+          <h2 className="max-w-[22rem] text-[clamp(1.28rem,2vw,2.05rem)] font-medium leading-[1.04] tracking-normal">
             {card.headline}
           </h2>
-          <p className="mt-2 max-w-[24rem] text-sm leading-5 text-white/68 lg:mt-4 lg:text-base lg:leading-6">
+          <p className="mt-[clamp(0.5rem,1vw,1rem)] max-w-[24rem] text-[clamp(0.82rem,1vw,1rem)] leading-[1.45] text-white/68">
             {card.description}
           </p>
-          <div className="mt-auto flex items-center text-sm text-white/55">
+          <div className="mt-auto flex items-center text-[clamp(0.78rem,0.95vw,0.9rem)] text-white/55">
             <span className="min-w-0 truncate">{card.handle}</span>
           </div>
         </div>
@@ -235,30 +235,30 @@ function LegacyBilibiliInterior() {
 
 function BilibiliInterior() {
   return (
-    <div className="relative flex h-full min-h-[88px] items-center gap-3 overflow-hidden rounded-[14px] border border-white/15 bg-[linear-gradient(135deg,#090c12,#120814_54%,#08111a)] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] lg:min-h-[210px] lg:gap-6 lg:p-5">
+    <div className="relative flex h-full min-h-0 items-center gap-[clamp(0.75rem,1.6vw,1.5rem)] overflow-hidden rounded-[14px] border border-white/15 bg-[linear-gradient(135deg,#090c12,#120814_54%,#08111a)] p-[clamp(0.75rem,1.2vw,1.25rem)] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_26%_42%,rgba(251,114,153,0.34),transparent_26%),radial-gradient(circle_at_84%_24%,rgba(0,161,214,0.18),transparent_24%),linear-gradient(112deg,rgba(255,255,255,0.06),transparent_30%,rgba(251,114,153,0.08)_66%,transparent)]" />
-      <div className="absolute -left-2 bottom-0 h-14 w-28 rounded-full bg-[#fb7299]/20 blur-2xl lg:h-24 lg:w-40" />
+      <div className="absolute -left-2 bottom-0 h-[clamp(3.5rem,5vw,6rem)] w-[clamp(7rem,9vw,10rem)] rounded-full bg-[#fb7299]/20 blur-2xl" />
 
-      <div className="relative z-10 h-16 w-16 shrink-0 overflow-visible sm:h-20 sm:w-20 lg:h-40 lg:w-40">
+      <div className="relative z-10 h-[clamp(4rem,8vw,7.25rem)] w-[clamp(4rem,8vw,7.25rem)] shrink-0 overflow-visible">
         <img
           src={assetUrl("assets/bilibili-pikachu-avatar.png")}
           alt=""
-          className="h-full w-full rounded-full object-cover object-center shadow-[0_14px_36px_rgba(0,0,0,0.34),0_0_24px_rgba(251,114,153,0.16)] lg:shadow-[0_24px_70px_rgba(0,0,0,0.42),0_0_32px_rgba(251,114,153,0.18)]"
+          className="h-full w-full rounded-full object-cover object-center shadow-[0_14px_36px_rgba(0,0,0,0.34),0_0_24px_rgba(251,114,153,0.16)]"
         />
-        <span className="absolute -right-1 top-3 h-4 w-4 rounded-full bg-[#00a1d6]/70 blur-[2px] lg:h-7 lg:w-7" />
+        <span className="absolute -right-1 top-3 h-[clamp(1rem,1.4vw,1.75rem)] w-[clamp(1rem,1.4vw,1.75rem)] rounded-full bg-[#00a1d6]/70 blur-[2px]" />
       </div>
 
-      <div className="relative z-10 flex min-w-0 flex-1 flex-col justify-center pt-2 lg:pt-4">
-        <div className="mt-1 lg:mt-3">
-          <p className="text-[1.2rem] font-black leading-none tracking-[0.04em] text-[#ff87ad] drop-shadow-[0_0_18px_rgba(251,114,153,0.2)] sm:text-[1.35rem] lg:text-[2.9rem]">
+      <div className="relative z-10 flex min-w-0 flex-1 flex-col justify-center pt-[clamp(0.25rem,0.7vw,0.75rem)]">
+        <div className="mt-[clamp(0.25rem,0.6vw,0.75rem)]">
+          <p className="text-[clamp(1.2rem,2.2vw,2.2rem)] font-black leading-none tracking-[0.04em] text-[#ff87ad] drop-shadow-[0_0_18px_rgba(251,114,153,0.2)]">
             BILIBILI
           </p>
-          <p className="mt-1 hidden text-[0.72rem] leading-4 text-white/56 sm:block lg:mt-2 lg:text-sm lg:leading-6">
+          <p className="mt-[clamp(0.25rem,0.55vw,0.5rem)] hidden text-[clamp(0.72rem,0.8vw,0.875rem)] leading-[1.45] text-white/56 sm:block">
             life clips, tiny demos, and ideas in motion
           </p>
         </div>
-        <div className="mt-3 flex items-center gap-2 lg:mt-5">
-          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/12 lg:h-2">
+        <div className="mt-[clamp(0.75rem,1.2vw,1.25rem)] flex items-center gap-2">
+          <div className="h-[clamp(0.375rem,0.55vw,0.5rem)] flex-1 overflow-hidden rounded-full bg-white/12">
             <span className="block h-full w-[68%] rounded-full bg-[linear-gradient(90deg,#fb7299,#ff9db8_58%,#8adfff)]" />
           </div>
           <span className="hidden h-2 w-2 rounded-full bg-[#8adfff] shadow-[0_0_10px_rgba(138,223,255,0.7)] lg:block" />
@@ -270,7 +270,7 @@ function BilibiliInterior() {
 
 function NetEaseInterior() {
   return (
-    <div className="relative h-full min-h-[88px] overflow-hidden rounded-[14px] lg:min-h-[210px]">
+    <div className="relative h-full min-h-0 overflow-hidden rounded-[14px]">
       <img
         src={assetUrl("assets/netease-cloud-music-showcase.png")}
         alt=""
@@ -282,13 +282,13 @@ function NetEaseInterior() {
 
 function GitHubInterior() {
   return (
-    <div className="relative flex h-full min-h-[84px] flex-col overflow-hidden rounded-[14px] border border-white/15 bg-[#070b0d] p-4 lg:min-h-[210px] lg:p-6">
-      <div className="mb-4 flex gap-2">
+    <div className="relative flex h-full min-h-0 flex-col overflow-hidden rounded-[14px] border border-white/15 bg-[#070b0d] p-[clamp(1rem,1.4vw,1.5rem)]">
+      <div className="mb-[clamp(0.75rem,1vw,1rem)] flex gap-2">
         <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
         <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
         <span className="h-3 w-3 rounded-full bg-[#28c840]" />
       </div>
-      <div className="space-y-2 font-mono text-xs text-white/70 lg:text-sm">
+      <div className="space-y-[clamp(0.35rem,0.7vw,0.5rem)] font-mono text-[clamp(0.72rem,0.8vw,0.875rem)] text-white/70">
         <p>
           <span className="text-[#7CFFB2]">$</span> open useful-ideas
         </p>
@@ -310,24 +310,24 @@ function GitHubInterior() {
 
 function XiaohongshuInterior({ tags }: { tags: string[] }) {
   return (
-    <div className="relative flex h-full min-h-[88px] items-center gap-3 overflow-hidden rounded-[14px] border border-white/15 bg-[radial-gradient(circle_at_22%_50%,rgba(255,255,255,0.08),transparent_28%),radial-gradient(circle_at_72%_48%,rgba(255,36,66,0.2),transparent_30%),linear-gradient(135deg,#07080f,#12070c_58%,#050507)] px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] lg:gap-6 lg:px-5 lg:py-4">
+    <div className="relative flex h-full min-h-0 items-center gap-[clamp(0.75rem,1.6vw,1.5rem)] overflow-hidden rounded-[14px] border border-white/15 bg-[radial-gradient(circle_at_22%_50%,rgba(255,255,255,0.08),transparent_28%),radial-gradient(circle_at_72%_48%,rgba(255,36,66,0.2),transparent_30%),linear-gradient(135deg,#07080f,#12070c_58%,#050507)] px-[clamp(0.75rem,1.2vw,1.25rem)] py-[clamp(0.5rem,1vw,1rem)] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.05),transparent_28%,rgba(255,36,66,0.08)_70%,transparent)] opacity-80" />
-      <div className="absolute bottom-0 right-0 h-16 w-28 translate-x-5 translate-y-5 rounded-full bg-[#ff2442]/15 blur-2xl lg:h-28 lg:w-44" />
+      <div className="absolute bottom-0 right-0 h-[clamp(4rem,5.8vw,7rem)] w-[clamp(7rem,9vw,11rem)] translate-x-5 translate-y-5 rounded-full bg-[#ff2442]/15 blur-2xl" />
 
-      <div className="relative z-10 h-16 w-16 shrink-0 overflow-visible sm:h-20 sm:w-20 lg:h-36 lg:w-36">
+      <div className="relative z-10 h-[clamp(4rem,7.5vw,6.75rem)] w-[clamp(4rem,7.5vw,6.75rem)] shrink-0 overflow-visible">
         <img
           src={assetUrl("assets/xiaohongshu-dog-avatar.png")}
           alt=""
-          className="h-full w-full rounded-full object-cover shadow-[0_16px_42px_rgba(0,0,0,0.36)] lg:shadow-[0_24px_70px_rgba(0,0,0,0.42)]"
+          className="h-full w-full rounded-full object-cover shadow-[0_16px_42px_rgba(0,0,0,0.36)]"
         />
         <span className="pointer-events-none absolute inset-0 rounded-full bg-[linear-gradient(135deg,rgba(255,255,255,0.08),transparent_44%,rgba(255,36,66,0.06))]" />
       </div>
 
       <div className="relative z-10 flex min-w-0 flex-1 flex-col justify-center pt-1 lg:h-full lg:pt-0">
-        <span className="text-[1.5rem] font-black leading-none tracking-normal text-[#ff344f] drop-shadow-[0_0_20px_rgba(255,36,66,0.24)] sm:text-[1.85rem] lg:text-[3.45rem]">
+        <span className="text-[clamp(1.5rem,2.6vw,2.75rem)] font-black leading-none tracking-normal text-[#ff344f] drop-shadow-[0_0_20px_rgba(255,36,66,0.24)]">
           小红书
         </span>
-        <div className="mt-2 hidden flex-wrap gap-2 sm:flex lg:mt-5">
+        <div className="mt-[clamp(0.5rem,1.2vw,1.25rem)] hidden flex-wrap gap-2 sm:flex">
           {tags.slice(0, 3).map((tag) => (
             <span key={tag} className="rounded-full border border-[#ff344f]/25 bg-white/[0.06] px-2.5 py-1 text-[0.65rem] font-bold text-white/62">
               #{tag}
@@ -341,15 +341,15 @@ function XiaohongshuInterior({ tags }: { tags: string[] }) {
 
 function EmailInterior({ email }: { email: string }) {
   return (
-    <div className="relative flex h-full min-h-[88px] items-center justify-center overflow-hidden rounded-[14px] border border-white/15 bg-[#171309] px-5 lg:min-h-[210px] lg:px-8">
+    <div className="relative flex h-full min-h-0 items-center justify-center overflow-hidden rounded-[14px] border border-white/15 bg-[#171309] px-[clamp(1rem,1.8vw,1.75rem)]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(245,214,123,0.36),transparent_38%)]" />
-      <div className="relative w-full rounded-[14px] border border-[#f5d67b]/45 bg-black/35 p-4 shadow-[0_20px_70px_rgba(245,214,123,0.16)] lg:p-6">
-        <div className="mb-4 flex items-center gap-3">
-          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f5d67b] text-xl text-black">@</span>
+      <div className="relative w-full rounded-[14px] border border-[#f5d67b]/45 bg-black/35 p-[clamp(1rem,1.5vw,1.5rem)] shadow-[0_20px_70px_rgba(245,214,123,0.16)]">
+        <div className="mb-[clamp(0.75rem,1.1vw,1rem)] flex items-center gap-3">
+          <span className="flex h-[clamp(2rem,3vw,2.75rem)] w-[clamp(2rem,3vw,2.75rem)] items-center justify-center rounded-full bg-[#f5d67b] text-xl text-black">@</span>
           <span className="text-sm font-bold uppercase tracking-[0.16em] text-[#f5d67b]">Inbox</span>
         </div>
-        <p className="truncate text-base text-white lg:text-xl">{email}</p>
-        <div className="mt-4 h-px bg-[#f5d67b]/40" />
+        <p className="truncate text-[clamp(0.95rem,1.2vw,1.15rem)] text-white">{email}</p>
+        <div className="mt-[clamp(0.75rem,1.1vw,1rem)] h-px bg-[#f5d67b]/40" />
       </div>
     </div>
   );
@@ -357,7 +357,7 @@ function EmailInterior({ email }: { email: string }) {
 
 function GenericInterior({ tags }: { tags: string[] }) {
   return (
-    <div className="relative h-full min-h-[88px] overflow-hidden rounded-[14px] border border-white/15 bg-[#111] p-4 lg:min-h-[210px] lg:p-6">
+    <div className="relative h-full min-h-0 overflow-hidden rounded-[14px] border border-white/15 bg-[#111] p-[clamp(1rem,1.4vw,1.5rem)]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(255,255,255,0.22),transparent_35%)]" />
       <div className="relative grid h-full grid-cols-3 gap-3">
         {tags.map((tag, index) => (
@@ -374,7 +374,7 @@ function GenericInterior({ tags }: { tags: string[] }) {
 function ArrowButton({ direction }: { direction: "left" | "right" }) {
   return (
     <button
-      className={`flex h-14 w-14 items-center justify-center rounded-full border border-white text-3xl transition hover:bg-white hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${
+      className={`flex h-[clamp(2.5rem,3.5vw,3rem)] w-[clamp(2.5rem,3.5vw,3rem)] items-center justify-center rounded-full border border-white text-[clamp(1.35rem,2vw,1.75rem)] transition hover:bg-white hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${
         direction === "left" ? "rotate-180" : ""
       }`}
       type="button"

@@ -90,7 +90,7 @@ func spaHandler(root string) http.HandlerFunc {
 
 func defaultProfile() Profile {
 	return Profile{
-		Name:         "Your Name",
+		Name:         "ZYF's Space",
 		Avatar:       "/assets/avatar-placeholder.svg",
 		AvatarAlt:    "Personal avatar portrait",
 		Introduction: "Welcome. I collect my projects, writing, and everyday thoughts here so you can quickly know who I am and where to find me.",

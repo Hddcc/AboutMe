@@ -59,8 +59,8 @@ em {
 
 .featured-card-group {
   display: flex;
-  gap: 2rem;
-  padding-right: 2rem;
+  gap: clamp(1rem, 2vw, 2rem);
+  padding-right: clamp(1rem, 2vw, 2rem);
 }
 
 .featured-track:hover,
@@ -80,7 +80,21 @@ em {
 
 @media (max-width: 767px) {
   .featured-track {
-    animation-duration: 28s;
+    animation-delay: 1.2s;
+    animation-duration: 32s;
+    animation-fill-mode: both;
+    animation-name: wam-track-drift-mobile;
+  }
+}
+
+@keyframes wam-track-drift-mobile {
+  0%,
+  16% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
